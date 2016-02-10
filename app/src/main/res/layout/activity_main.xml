@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context="com.krishna.filescanner.MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        ></include>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_scan"
+        android:padding="20dp"
+        android:textSize="25dp"
+        android:onClick="startScan"
+        />
+
+    <TextView
+        android:id="@+id/currentDirTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current directory: "
+        android:visibility="invisible"
+        android:layout_below="@id/startButton"/>
+
+    <TextView
+        android:id="@+id/avgSizeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentDirTextView"
+        android:visibility="invisible"
+        android:text="Avg Size: "
+        android:textSize="20sp"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:id="@+id/freqExt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/avgSizeText"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:text="Five frequent extensions: "
+        />
+
+    <TextView
+        android:id="@+id/bigHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/freqExt"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:text="Ten biggest files: "
+        />
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_below="@id/bigHeading"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tenBigFiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textSize="15sp"
+            android:layout_weight="1.0"
+            android:text="Ten biggest files: (Scroll down for more)"
+            />
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
